@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main_div">
+        <div class="music_container">
+            <h2 id="title">PRANAY</h2>
+            <h3 id="artist">pranay</h3>
+            <div class="img_container">
+                <img src="pb2.png" alt="">
+            </div>
+            <audio src="arambh hei (2).mpeg"></audio>
+
+            <!-- controls -->
+            <div class="music_controls">
+                <i class="fas fa-backward" id="prev" title="preivious"></i>
+                <i class="fas fa-play main-button" id="play" title="play"></i>
+                <i class="fas fa-forward" id="next" title="next"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        const music = document.querySelector("audio");
+        const img = document.querySelector("img");
+        // const play = document.getElementById('play');
+        // const play = document.getElementById('artist');
+        // const play = document.getElementById('title');
+        // const play = document.getElementById('prev');
+        // const play = document.getElementById('next');
+
+
+
+        // const songs = [{
+        //     name: "pranay-2",
+        //     title: "pranay-2",
+        //     artist: "pranay-2",
+        // }]
+        // const songs = [{
+        //     name: "pranay-3",
+        //     title: "pranay-3",
+        //     artist: "pranay-3",
+        // }]
+        // const songs = [{
+        //     name: "pranay-4",
+        //     title: "pranay-4",
+        //     artist: "pranay-4",
+        // }]
+
+
+        let isPlaying = false;
+
+        // for play
+        const playMusic = () => {
+            isPlaying = true;
+            music.play();
+            play.classList.replace('fa-play', "fa-pause")
+            img.classList.add("anime");
+        };
+
+        // for pause 
+        const pauseMusic = () => {
+            isPlaying = false;
+            music.pause();
+            play.classList.replace("fa-pause", 'fa-play')
+            img.classList.remove("anime");
+        };
+        play.addEventListener("click", () => {
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            };
+
+
+            // isPlaying ? pauseMusic() : pauseMusic();
+
+        });
+        // // changing
+        // const loadSong = () => {
+        //     title.textContaint = songs.title;
+        //     artist.textContaint = songs.artist;
+        //     music.src = "a" + songs.name + ".mp3";
+        //     img.src = "images/" + songs.name + "jpg";
+        // }
+
+        // loadSong(songs[1]);
+    </script>
+</body>
+
+</html>
